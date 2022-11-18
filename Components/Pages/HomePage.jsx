@@ -110,10 +110,9 @@ const HomePage = () => {
   }
 
   return (
-    <div className="px-10 mx-auto">
-
+    <div data-testid="home" className="px-10 mx-auto">
       {error &&
-        <div className="bg-red-500 h-8 w-full my-8 py-5 md:mb-0 rounded-md flex items-center pl-5">
+        <div data-testid="error" className="bg-red-500 h-8 w-full my-8 py-5 md:mb-0 rounded-md flex items-center pl-5">
           <div className="flex items-center ">
             <div className="h-1 w-1 rounded-full bg-black mr-1" />
             <span className="text-lg text-white font-normal "><strong>ERROR:</strong> {error}</span>
@@ -123,10 +122,11 @@ const HomePage = () => {
 
       <div className="pt-5">
         <div className="grid grid-cols-4 pt-5 gap-4 bg-white p-4 rounded-xl shadow-lg rounded-t-none border-2">
-          <div className="rounded " >
+          <div data-testid="breed" className="rounded " >
             <label htmlFor="breed">Select Breed</label>
             <ReactSelect
               id="breed"
+              
               instanceId="breed"
               name="breed"
               defaultValue={filter.selectedBreed}
@@ -135,7 +135,8 @@ const HomePage = () => {
             />
           </div>
           {subBreeds?.length > 0 && (
-            <div className="rounded duration-200 " >
+                
+            <div data-testid="subBreed" className="rounded duration-200 " >
               <label htmlFor="subBreed">Select Sub Breed</label>
               <ReactSelect
                 id="subBreed"
@@ -147,10 +148,11 @@ const HomePage = () => {
               />
             </div>
           )}
-          <div className="rounded " >
+          <div data-testid="numberOfImages" className="rounded " >
             <label htmlFor="numberOfImages">Number of Images</label>
             <ReactSelect
               id="numberOfImages"
+              
               instanceId="numberOfImages"
               name="numberOfImages"
               defaultValue={filter.numberOfImages}
@@ -159,7 +161,7 @@ const HomePage = () => {
             />
           </div>
 
-          <button role="button" className="focus:ring-indigo-700 text-sm font-semibold  text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 w-full mt-4"
+          <button data-testid="view-images" role="button" className="focus:ring-indigo-700 text-sm font-semibold  text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 w-full mt-4"
             onClick={fetchImages}>
             View Images
           </button>

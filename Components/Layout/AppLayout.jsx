@@ -2,7 +2,7 @@ import Header from "Components/Header";
 
 const AppLayout = ({ children }) => {
   return (
-    <div className={""}>
+    <div id="app-layout" className={""}>
       <Header />
       <div className="bg-slate-100 min-h-screen ">
         {children}
